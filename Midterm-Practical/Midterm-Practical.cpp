@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include "QuestionGenerator.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	
+	Questions q;
+
+	std::string question1[4] = { "Blue", "Red", "Green", "Yellow" };
+
+	q.GenerateQuestions("What Color is the sky?", question1);
+	q.GenerateQuestions("What is 3+3?", )
+
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
