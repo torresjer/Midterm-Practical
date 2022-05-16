@@ -9,19 +9,21 @@ void Questions::GenerateQuestions(std::string question, std::string answers[4]) 
 	std::string temp[4] = {};
 	bool exit = false;
 	
-	for (int i = 0; i < numberOfQuestions; i++) {
-		answerVect.push_back(answers[i]);
-	}
-	std::random_shuffle(answerVect.begin(), answerVect.end());
-
+	
 
 	while (!exit)
 	{
+		for (int i = 0; i < numberOfQuestions; i++) {
+			answerVect.push_back(answers[i]);
+		}
+		std::random_shuffle(answerVect.begin(), answerVect.end());
+
 		std::cout << "Question: " + question << std::endl;
 		for (int i = 0; i < numberOfQuestions; i++) {
 			temp[i] = answerVect.back();
 			answerVect.pop_back();
-			std::cout << "\nAnswers:\n\n" + (i + 1); std::cout << ". " + temp[i] << std::endl;
+			int options = i + 1;
+			std::cout << options; std::cout << ". " + temp[i] << std::endl;
 		}
 
 		std::cout << "Choice: ";
@@ -33,18 +35,26 @@ void Questions::GenerateQuestions(std::string question, std::string answers[4]) 
 
 		if (answerChoosen > 3 || answerChoosen < 0) {
 			std::cout << "\n\nNot a vaild answer please try again";
-			std::cin.ignore();
+			std::cin.get();
 			system("CLS");
+			answerChoosen = 0;
 			continue;
 		}
 
 		if (answers[0] == temp[answerChoosen]) {
 
 			std::cout << "That is correct!";
+			std::cin.ignore();
+			std::cin.get();
+			system("CLS");
 			exit = true;
+			
 		}
 		else {
 			std::cout << "Incorrect!";
+			std::cin.ignore();
+			std::cin.get();
+			system("CLS");
 			exit = true;
 
 		}

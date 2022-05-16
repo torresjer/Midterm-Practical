@@ -8,11 +8,21 @@ int main()
 {
 	
 	Questions q;
-
+	//all correct answeres listed on the 0 index
 	std::string question1[4] = { "Blue", "Red", "Green", "Yellow" };
+	std::string question2[4] = { "6", "5", "7", "9"};
+	std::string question3[4] = { "Joey", "Bobby", "Cub", "Steve" };
+	std::string question4[4] = { "1776", "1957", "1872", "1512" };
 
 	q.GenerateQuestions("What Color is the sky?", question1);
-	q.GenerateQuestions("What is 3+3?", )
+	q.GenerateQuestions("What is 3+3?", question2);
+	q.GenerateQuestions("What is the name of a baby kangaroo?", question3);
+	q.GenerateQuestions("When was america founded?", question4);
+
+	std::cout << "Thank you for your time!";
+	std::cin.get();
+	std::cin.ignore();
+
 
 	return 0;
 }
